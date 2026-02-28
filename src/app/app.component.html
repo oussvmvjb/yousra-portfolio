@@ -6,26 +6,26 @@
             <a class="navbar-brand fw-bold" routerLink="/" style="color: var(--primary-color);">
                 <i class="fas fa-terminal me-2"></i>Portfolio
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ms-auto" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+                [attr.aria-expanded]="!isNavbarCollapsed" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" [class.show]="!isNavbarCollapsed" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="home">{{ 'nav.home' | translate }}</a>
+                        <a class="nav-link" routerLink="/" fragment="home" (click)="isNavbarCollapsed = true">{{ 'nav.home' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="about">{{ 'nav.about' | translate }}</a>
+                        <a class="nav-link" routerLink="/" fragment="about" (click)="isNavbarCollapsed = true">{{ 'nav.about' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="skills">{{ 'nav.skills' | translate }}</a>
+                        <a class="nav-link" routerLink="/" fragment="skills" (click)="isNavbarCollapsed = true">{{ 'nav.skills' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="journey">{{ 'nav.journey' | translate }}</a>
+                        <a class="nav-link" routerLink="/" fragment="journey" (click)="isNavbarCollapsed = true">{{ 'nav.journey' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="projects">{{ 'nav.projects' | translate }}</a>
+                        <a class="nav-link" routerLink="/" fragment="projects" (click)="isNavbarCollapsed = true">{{ 'nav.projects' | translate }}</a>
                     </li>
 
                     <!-- Language Switcher -->
@@ -38,11 +38,11 @@
                         <ul class="dropdown-menu dropdown-menu-end glass-card border-0 shadow-lg"
                             aria-labelledby="langDropdown"
                             style="background: var(--glass-bg); backdrop-filter: blur(15px);">
-                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('fr', $event)">FR
+                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('fr', $event); isNavbarCollapsed = true">FR
                                     Français</a></li>
-                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('en', $event)">EN
+                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('en', $event); isNavbarCollapsed = true">EN
                                     English</a></li>
-                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('it', $event)">IT
+                            <li><a class="dropdown-item fw-bold" href="#" (click)="switchLanguage('it', $event); isNavbarCollapsed = true">IT
                                     Italiano</a></li>
                         </ul>
                     </li>
@@ -55,7 +55,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-modern btn-modern-primary ms-lg-3 px-4 py-2" routerLink="/"
-                            fragment="contact">{{ 'nav.contact' | translate }}</a>
+                            fragment="contact" (click)="isNavbarCollapsed = true">{{ 'nav.contact' | translate }}</a>
                     </li>
                 </ul>
             </div>

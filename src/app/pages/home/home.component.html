@@ -2,15 +2,15 @@
     <!-- HERO SECTION -->
     <section id="home" class="align-items-center min-vh-75 py-5">
         <div class="row align-items-center">
-            <div class="col-lg-7" data-aos="fade-right">
+            <div class="col-lg-7 text-center text-lg-start mb-5 mb-lg-0" data-aos="fade-right">
                 <h1 class="hero-title fw-bold mb-4">
                     {{ personalInfo.prenon || 'Développeur' }} <br>
                     <span id="typed"></span>
                 </h1>
-                <p class="hero-subtitle mb-5">
+                <p class="hero-subtitle mb-5 mx-auto mx-lg-0" style="max-width: 600px;">
                     {{ (personalInfo.description || '') | slice:0:200 }}...
                 </p>
-                <div class="d-flex gap-3">
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
                     <a href="javascript:void(0)" class="btn btn-modern btn-modern-primary"
                         (click)="scrollToSection('projects')">
                         {{ 'hero.projects_btn' | translate }}

@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'yousra_portfolio';
   isDarkMode = false;
   currentLanguage = 'fr';
+  isNavbarCollapsed = true;
   private typed: Typed | undefined;
   private particles: any[] = [];
   private animationFrameId: number | undefined;

@@ -74,7 +74,12 @@ body {
 }
 
 /* Apply Heavy font to headings */
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .hero-title,
 .section-title,
 .project-title-xl,
@@ -127,6 +132,10 @@ h6 {
     transition: var(--transition-smooth);
     padding: 2rem;
     color: var(--text-main);
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+    }
 }
 
 .glass-card:hover {
@@ -301,12 +310,16 @@ h6 {
 
 /* Hero Section Styling */
 .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
     background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
+
+    @media (max-width: 991px) {
+        text-align: center;
+    }
 }
 
 .section-header {
@@ -314,7 +327,7 @@ h6 {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
