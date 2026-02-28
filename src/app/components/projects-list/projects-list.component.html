@@ -1,0 +1,56 @@
+<div class="container py-5">
+    <div class="text-center mb-5 fade-up">
+        <h1 class="hero-title display-4 mb-3">{{ 'projects.title' | translate }}</h1>
+        <p class="text-muted col-lg-6 mx-auto">
+            {{ 'projects.subtitle' | translate }}
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <ng-container *ngIf="projects.length > 0; else noProjects">
+            <div *ngFor="let project of projects; let i = index" class="col-md-6 col-lg-4 fade-up"
+                [style.animation-delay]="getDelay(i) + 's'">
+                <div class="glass-card project-card p-0">
+                    <div class="overflow-hidden p-3" style="border-radius: 24px;">
+                        <img *ngIf="project.image" [src]="getProjectImage(project)" class="card-img-top shadow-sm"
+                            [alt]="project.titre" style="height: 220px; object-fit: cover; border-radius: 12px;">
+                        <div *ngIf="!project.image" class="bg-light d-flex align-items-center justify-content-center"
+                            style="height: 220px; border-radius: 12px;">
+                            <i class="fas fa-image fa-3x text-muted"></i>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 pt-0">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="tech-badge">{{ project.technologie }}</span>
+                            <small class="text-muted">
+                                <i class="fas fa-calendar-alt me-1"></i>{{ formatYear(project.creatdat) }}
+                            </small>
+                        </div>
+                        <h5 class="fw-bold mb-3">{{ project.titre }}</h5>
+                        <p class="text-muted small mb-4">{{ project.description | slice:0:110 }}...</p>
+
+                        <div class="d-flex gap-2">
+                            <a [routerLink]="['/project', project.id]"
+                                class="btn btn-modern btn-modern-primary flex-grow-1 py-2" style="font-size: 0.8rem;">
+                                <i class="fas fa-eye me-1"></i>{{ 'project.details_btn' | translate }}
+                            </a>
+                            <a *ngIf="project.githublink" [href]="project.githublink" target="_blank"
+                                class="btn btn-modern btn-modern-outline py-2 px-3">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #noProjects>
+            <div class="col-12 fade-up">
+                <div class="glass-card text-center py-5">
+                    <i class="fas fa-folder-open fa-3x mb-3 text-muted"></i>
+                    <p class="mb-0">{{ 'projects.no_projects' | translate }}</p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

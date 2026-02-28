@@ -1,0 +1,109 @@
+<div *ngIf="!loading && project" class="project-detail">
+    <div class="project-header-section">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-5" data-aos="fade-down">
+                <ol class="breadcrumb glass-card py-2 px-4 d-inline-flex border-0 shadow-sm"
+                    style="border-radius: 50px;">
+                    <li class="breadcrumb-item">
+                        <a [routerLink]="['/']" fragment="projects" class="text-decoration-none color-primary">
+                            {{ 'nav.home' | translate }}
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ project.titre }}</li>
+                </ol>
+            </nav>
+
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="badge btn-modern btn-modern-primary mb-3">
+                        {{ formatDate(project.creatdat) }}
+                    </span>
+                    <h1 class="project-title-xl">{{ project.titre }}</h1>
+                    <div class="tech-stack mb-4">
+                        <div *ngFor="let tech of getTechList(); let i = index" class="tech-icon-wrapper"
+                            data-aos="zoom-in" [attr.data-aos-delay]="(i + 1) * 100">
+                            <i [class]="getTechIcon(tech)"></i>
+                            <span class="fw-bold">{{ tech }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="project.githublink" class="col-lg-5 text-lg-end" data-aos="fade-left">
+                    <a [href]="project.githublink" target="_blank" class="btn btn-modern btn-modern-primary px-5 py-3">
+                        <i class="fab fa-github me-2"></i> Voir sur GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="glass-card mb-5 anim-delay-1" data-aos="fade-up">
+                    <h3 class="fw-bold mb-4 border-bottom pb-2 border-primary border-3 d-inline-block">
+                        {{ 'project.about_this_project' | translate }}
+                    </h3>
+                    <div class="project-description text-muted fs-5" style="line-height: 1.8; white-space: pre-line;">
+                        {{ project.description }}
+                    </div>
+                </div>
+
+                <div class="gallery-section mb-5" *ngIf="getProjectImages().length > 0">
+                    <h3 class="fw-bold mb-4 anim-delay-2" data-aos="fade-up">
+                        {{ 'project.gallery' | translate }}
+                    </h3>
+                    <div class="gallery-grid">
+                        <div *ngFor="let img of getProjectImages(); let i = index" class="gallery-item shadow-lg"
+                            data-aos="zoom-in" [attr.data-aos-delay]="(i + 3) * 100"
+                            [style.grid-column]="getProjectImages().length === 1 ? '1 / -1' : 'auto'"
+                            [style.aspect-ratio]="getProjectImages().length === 1 ? '16/9' : '16/10'">
+                            <a [href]="img" target="_blank">
+                                <img [src]="img" [alt]="project.titre + ' Capture ' + (i+1)">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="project-info-card glass-card p-4" data-aos="fade-left" data-aos-delay="400">
+                    <h4 class="fw-bold mb-4">{{ 'project.more_info' | translate }}</h4>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box p-3 rounded-circle me-3 color-primary bg-opacity-10"
+                            style="background: rgba(138, 79, 5, 0.1);">
+                            <i class="fas fa-calendar-day fa-lg"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted d-block">{{ 'project.published_on' | translate }}</small>
+                            <span class="fw-bold">{{ formatDate(project.creatdat) }}</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="icon-box p-3 rounded-circle me-3 color-primary bg-opacity-10"
+                            style="background: rgba(138, 79, 5, 0.1);">
+                            <i class="fas fa-language fa-lg"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted d-block">{{ 'project.language' | translate }}</small>
+                            <span class="fw-bold text-uppercase">{{ project.locale || 'FR' }}</span>
+                        </div>
+                    </div>
+
+                    <hr class="my-4 opacity-10">
+
+                    <a [routerLink]="['/']" fragment="projects"
+                        class="btn btn-modern btn-modern-outline w-100 py-3 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-arrow-left me-2"></i> {{ 'project.back_to_projects' | translate }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Chargement...</span>
+    </div>
+</div>

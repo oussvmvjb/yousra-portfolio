@@ -1,0 +1,79 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center contact-title">Contactez-nous</h1>
+
+            <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ successMessage }}
+                <button type="button" class="btn-close" (click)="successMessage = ''"></button>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ errorMessage }}
+                <button type="button" class="btn-close" (click)="errorMessage = ''"></button>
+            </div>
+
+            <div class="contact-form">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" formControlName="fullname"
+                                [class.is-invalid]="submitted && f['fullname'].errors">
+                            <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                                Le nom est requis
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email"
+                                [class.is-invalid]="submitted && f['email'].errors">
+                            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                <span *ngIf="f['email'].errors?.['required']">Email requis</span>
+                                <span *ngIf="f['email'].errors?.['email']">Email invalide</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Téléphone</label>
+                            <input type="tel" class="form-control" formControlName="phone"
+                                [class.is-invalid]="submitted && f['phone'].errors">
+                            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                                Téléphone requis
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Sujet</label>
+                            <input type="text" class="form-control" formControlName="subject"
+                                [class.is-invalid]="submitted && f['subject'].errors">
+                            <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+                                Sujet requis
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4" formControlName="message"
+                            [class.is-invalid]="submitted && f['message'].errors"></textarea>
+                        <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+                            <span *ngIf="f['message'].errors?.['required']">Message requis</span>
+                            <span *ngIf="f['message'].errors?.['minlength']">
+                                Minimum 10 caractères
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-contact" [disabled]="isSubmitting">
+                            <span *ngIf="!isSubmitting">Envoyer le message</span>
+                            <span *ngIf="isSubmitting">
+                                <i class="fas fa-spinner fa-spin me-2"></i>Envoi...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

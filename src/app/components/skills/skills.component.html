@@ -1,0 +1,35 @@
+<div class="container py-5">
+    <div class="text-center mb-5 fade-up">
+        <h1 class="hero-title display-4 mb-3">Compétences</h1>
+        <p class="text-muted col-lg-6 mx-auto">
+            Mon expertise technique et les outils que j'utilise pour donner vie à vos projets.
+        </p>
+    </div>
+
+    <div class="row g-4 d-flex justify-content-center">
+        <ng-container *ngIf="skills.length > 0; else noSkills">
+            <div *ngFor="let skill of skills; let i = index" 
+                 class="col-6 col-md-4 col-lg-3 fade-up"
+                 [style.animation-delay]="getDelay(i) + 's'">
+                <div class="glass-card text-center p-4 h-100 d-flex flex-column align-items-center justify-content-center">
+                    <div *ngIf="getSkillIcon(skill)" 
+                         class="mb-3 p-3 bg-white rounded-circle shadow-sm d-flex align-items-center justify-content-center"
+                         style="width: 80px; height: 80px;">
+                        <i [class]="getSkillIcon(skill) + ' fa-2x'" style="color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="h5 fw-bold mb-2">{{ skill.nom }}</h3>
+                    <span class="tech-badge py-1 px-3">{{ skill.level || 'Intermédiaire' }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #noSkills>
+            <div class="col-12 fade-up">
+                <div class="glass-card text-center py-5">
+                    <i class="fas fa-tools fa-3x mb-3 text-muted"></i>
+                    <p class="mb-0">Aucune compétence n'a été ajoutée pour le moment.</p>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

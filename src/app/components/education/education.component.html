@@ -1,0 +1,38 @@
+<div class="container py-5">
+    <div class="text-center mb-5" data-aos="fade-down">
+        <h1 class="section-title display-4">Mon Parcours Éducatif</h1>
+        <p class="lead" style="color: var(--text-main);">Formation et développement professionnel</p>
+    </div>
+
+    <div class="education-grid">
+        <ng-container *ngIf="educations.length > 0; else noEducation">
+            <div *ngFor="let education of educations; let i = index" 
+                 class="education-card" 
+                 [attr.data-aos]="'fade-up'"
+                 [attr.data-aos-delay]="getDelay(i)">
+                <div class="education-card-header">
+                    <h3 class="diploma">{{ education.diplome }}</h3>
+                    <div class="school">
+                        <i class="fas fa-university"></i>
+                        {{ education.etablissement }}
+                    </div>
+                    <div class="date-badge">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        {{ formatDate(education.datedebut) }} - 
+                        {{ education.datefin ? formatDate(education.datefin) : 'Présent' }}
+                    </div>
+                </div>
+                <div class="education-card-body">
+                    <p class="description">{{ education.description || 'Aucune description disponible' }}</p>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #noEducation>
+            <div class="text-center py-5 col-12">
+                <i class="fas fa-graduation-cap fa-3x mb-3 text-muted"></i>
+                <p class="text-muted">Aucune formation n'a été ajoutée pour le moment.</p>
+            </div>
+        </ng-template>
+    </div>
+</div>

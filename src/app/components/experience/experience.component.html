@@ -1,0 +1,45 @@
+<div class="experience-hero py-5 mb-5" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center text-white">
+                <h1 class="display-4 fw-bold mb-3">Expériences Professionnelles</h1>
+                <p class="lead">Mon parcours et mes réalisations professionnelles</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="timeline">
+        <ng-container *ngIf="experiences.length > 0; else noExperience">
+            <div *ngFor="let experience of experiences; let i = index" class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" 
+                     [attr.data-aos]="!isOdd(i) ? 'fade-right' : 'fade-left'"
+                     [attr.data-aos-delay]="i * 100">
+                    <div class="timeline-date">
+                        {{ formatDate(experience.datedebut) }} - 
+                        {{ experience.datefin ? formatDate(experience.datefin) : 'Présent' }}
+                    </div>
+                    <h4 class="timeline-title">{{ experience.titre }}</h4>
+                    <div class="timeline-company">
+                        <i class="fas fa-building me-2"></i>{{ experience.entreprise }}
+                        <span class="ms-3"><i class="fas fa-map-marker-alt me-2"></i>{{ experience.local }}</span>
+                    </div>
+                    <p class="timeline-description">{{ experience.descriotion }}</p>
+                    <div class="timeline-responsibilities" *ngIf="experience.responsabilite">
+                        <h6><i class="fas fa-tasks me-2"></i>Responsabilités</h6>
+                        <p class="mb-0">{{ experience.responsabilite }}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #noExperience>
+            <div class="text-center py-5">
+                <i class="fas fa-briefcase fa-3x mb-3 text-muted"></i>
+                <p class="text-muted">Aucune expérience n'a été ajoutée pour le moment.</p>
+            </div>
+        </ng-template>
+    </div>
+</div>

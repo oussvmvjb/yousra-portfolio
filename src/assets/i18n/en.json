@@ -1,0 +1,46 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "journey": "Journey",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "projects_btn": "My Projects",
+        "about_btn": "About Me",
+        "code_design": "Code • Design • Innovation",
+        "typed": {
+            "developer": "Full Stack Developer",
+            "designer": "UI/UX Designer",
+            "innovator": "Innovator",
+            "problem_solver": "Problem Solver"
+        }
+    },
+    "section_titles": {
+        "about": "About Me",
+        "skills": "Skills & Technologies",
+        "journey": "My Journey",
+        "projects": "My Projects",
+        "contact": "Contact Me"
+    },
+    "about": {
+        "who_am_i": "Who am I?"
+    },
+    "journey": {
+        "education": "Education",
+        "experience": "Experience"
+    },
+    "contact": {
+        "title": "Let's talk about your project",
+        "subtitle": "Have a project in mind? Don't hesitate to contact me!",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "name": "Full Name",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send"
+    }
+}

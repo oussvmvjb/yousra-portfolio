@@ -1,0 +1,246 @@
+<div class="container">
+    <!-- HERO SECTION -->
+    <section id="home" class="align-items-center min-vh-75 py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="fade-right">
+                <h1 class="hero-title fw-bold mb-4">
+                    {{ personalInfo.prenon || 'Développeur' }} <br>
+                    <span id="typed"></span>
+                </h1>
+                <p class="hero-subtitle mb-5">
+                    {{ (personalInfo.description || '') | slice:0:200 }}...
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="javascript:void(0)" class="btn btn-modern btn-modern-primary"
+                        (click)="scrollToSection('projects')">
+                        {{ 'hero.projects_btn' | translate }}
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-modern btn-modern-outline"
+                        (click)="scrollToSection('about')">
+                        {{ 'hero.about_btn' | translate }}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block" data-aos="zoom-in">
+                <div class="glass-card text-center p-5 parallax-bg" data-speed="15">
+                    <i class="fas fa-code fa-5x mb-4 text-primary" style="color: var(--primary-color) !important;"></i>
+                    <h2 class="h3 fw-bold">{{ 'hero.code_design' | translate }}</h2>
+                    <p class="text-muted">Symfony • PHP • Javascript</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="fade-up" data-aos="fade-up">
+        <div class="section-header text-center">
+            <h2 class="section-title">
+                <i class="fas fa-user-circle me-3"></i>{{ 'section_titles.about' | translate }}
+            </h2>
+        </div>
+        <div class="glass-card p-4 p-lg-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-right">
+                    <img [src]="getProfileImageUrl()" alt="Profile"
+                        class="img-fluid rounded-circle shadow-lg parallax-bg" data-speed="10"
+                        style="width: 200px; height: 200px; object-fit: cover; border: 5px solid white;">
+                </div>
+                <div class="col-md-8" data-aos="fade-left">
+                    <h3 class="fw-bold mb-3 h4">{{ 'about.who_am_i' | translate }}</h3>
+                    <p class="text-muted mb-4">{{ personalInfo.description || '' }}</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <i class="fas fa-envelope me-2 color-primary"></i>{{ personalInfo.email }}
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="fas fa-phone me-2 color-primary"></i>{{ personalInfo.phone }}
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="fas fa-map-marker-alt me-2 color-primary"></i>{{ personalInfo.city }}
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="fas fa-graduation-cap me-2 color-primary"></i>{{ personalInfo.degree || 'Bac+5' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-up" data-aos="fade-up">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">
+                <i class="fas fa-medal me-3"></i>{{ 'section_titles.skills' | translate }}
+            </h2>
+        </div>
+
+        <div *ngFor="let category of categories; let i = index" class="category-wrapper mb-2" data-aos="fade-up"
+            [attr.data-aos-delay]="(i + 1) * 100">
+
+            <ng-container *ngIf="getSkillsByCategory(category.key).length > 0">
+                <h3 class="h5 fw-bold mb-2 ps-3 border-start border-primary border-4">
+                    {{ category.label }}
+                </h3>
+                <div class="skills-carousel-container">
+                    <div class="skills-track">
+                        <!-- First set -->
+                        <div *ngFor="let skill of getSkillsByCategory(category.key)"
+                            class="skill-circle-card text-center" [class.ai-skill]="isAISkill(skill)">
+                            <i [class]="(skill.image || 'fas fa-star') + ' mb-2'"
+                                style="color: var(--primary-color);"></i>
+                            <h4 class="skill-name">{{ skill.nom }}</h4>
+                        </div>
+                        <!-- Duplicated set for infinite loop -->
+                        <div *ngFor="let skill of getSkillsByCategory(category.key)"
+                            class="skill-circle-card text-center" [class.ai-skill]="isAISkill(skill)">
+                            <i [class]="(skill.image || 'fas fa-star') + ' mb-2'"
+                                style="color: var(--primary-color);"></i>
+                            <h4 class="skill-name">{{ skill.nom }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="journey" class="fade-up">
+        <div class="section-header text-center">
+            <h2 class="section-title">
+                <i class="fas fa-history me-3"></i>{{ 'section_titles.journey' | translate }}
+            </h2>
+        </div>
+
+        <!-- Formation (Side by Side) -->
+        <div class="mb-5">
+            <h3 class="fw-bold mb-4 h4 text-center">
+                <i class="fas fa-graduation-cap me-2 color-primary"></i>{{ 'journey.education' | translate }}
+            </h3>
+            <div class="row g-4">
+                <div *ngFor="let edu of educations; let i = index" class="col-md-4" data-aos="zoom-in"
+                    [attr.data-aos-delay]="i * 150">
+                    <div class="glass-card education-card h-100 p-4">
+                        <span class="date-badge mb-3 d-inline-block">
+                            {{ edu.datedebut | date:'yyyy' }} — {{ edu.datefin ? (edu.datefin | date:'yyyy') : 'Présent'
+                            }}
+                        </span>
+                        <h4 class="h5 fw-bold mb-2">{{ edu.diplome }}</h4>
+                        <div class="small fw-bold color-primary mb-3">{{ edu.etablissement }}</div>
+                        <p class="small text-muted mb-0 expandable-text">{{ edu.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5 opacity-0">
+
+        <!-- Expériences (Vertical Timeline) -->
+        <div>
+            <h3 class="fw-bold mb-5 h4 text-center">
+                <i class="fas fa-briefcase me-2 color-primary"></i>{{ 'journey.experience' | translate }}
+            </h3>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div *ngFor="let exp of experiences; let i = index" class="timeline-item"
+                    [attr.data-aos]="!isOdd(i) ? 'fade-right' : 'fade-left'" [attr.data-aos-delay]="i * 150">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">
+                        {{ exp.datedebut | date:'yyyy' }} — {{ exp.datefin ? (exp.datefin | date:'yyyy') : 'Présent' }}
+                    </div>
+                    <div class="timeline-content">
+                        <h4 class="h5 fw-bold mb-1">{{ exp.titre }}</h4>
+                        <div class="small fw-bold color-primary mb-2 text-uppercase letter-spacing-1">
+                            {{ exp.entreprise }}
+                        </div>
+                        <p class="small text-muted mb-0 expandable-text">{{ exp.descriotion }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="fade-up" data-aos="fade-up">
+        <div class="section-header text-center">
+            <h2 class="section-title">
+                <i class="fas fa-laptop-code me-3"></i>{{ 'section_titles.projects' | translate }}
+            </h2>
+        </div>
+        <div class="row g-4">
+            <div *ngFor="let project of projects; let i = index" class="col-md-6 col-lg-4" data-aos="zoom-in"
+                [attr.data-aos-delay]="i * 150">
+                <a [routerLink]="['/project', project.id]" class="text-decoration-none text-reset">
+                    <div class="glass-card project-card p-0 h-100">
+                        <div class="p-3">
+                            <img [src]="getProjectImageUrl(project)" class="img-fluid rounded"
+                                style="height: 200px; width: 100%; object-fit: cover;">
+                        </div>
+                        <div class="p-4 pt-0">
+                            <span class="tech-badge mb-2 d-inline-block">{{ project.technologie }}</span>
+                            <h4 class="h5 fw-bold">{{ project.titre }}</h4>
+                            <p class="small text-muted mb-0">{{ project.description | slice:0:100 }}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="fade-up">
+        <div class="section-header text-center">
+            <h2 class="section-title">
+                <i class="fas fa-paper-plane me-3"></i>{{ 'section_titles.contact' | translate }}
+            </h2>
+        </div>
+
+        <div class="glass-card p-4 p-lg-5">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h3 class="fw-bold mb-4 h4">{{ 'contact.title' | translate }}</h3>
+                    <p class="text-muted mb-5">{{ 'contact.subtitle' | translate }}</p>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yosrabenrajab@gmail.com" target="_blank"
+                        class="text-decoration-none text-reset">
+                        <div class="d-flex align-items-center mb-4 magnetic">
+                            <div class="icon-box me-3 rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-envelope color-primary"></i>
+                            </div>
+                            <div>
+                                <div class="small text-muted fw-bold">{{ 'contact.email' | translate }}</div>
+                                <div class="fw-bold">{{ personalInfo.email || 'yosrabenrajab@gmail.com' }}</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="d-flex align-items-center mb-4 magnetic">
+                        <div class="icon-box me-3 rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px;">
+                            <i class="fas fa-phone color-primary"></i>
+                        </div>
+                        <div>
+                            <div class="small text-muted fw-bold">{{ 'contact.phone' | translate }}</div>
+                            <div class="fw-bold">{{ personalInfo.phone || '' }}</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center magnetic">
+                        <div class="icon-box me-3 rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 50px; height: 50px;">
+                            <i class="fas fa-map-marker-alt color-primary"></i>
+                        </div>
+                        <div>
+                            <div class="small text-muted fw-bold">{{ 'contact.location' | translate }}</div>
+                            <div class="fw-bold">{{ personalInfo.city || '' }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <app-contact></app-contact>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

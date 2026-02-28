@@ -1,0 +1,117 @@
+<div class="container py-5">
+    <ng-container *ngIf="personalInfo; else noInfo">
+        <div class="row align-items-center mb-5 fade-up">
+            <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                <div class="position-relative d-inline-block">
+                    <div class="glass-card p-2 rounded-circle shadow-lg" 
+                         [style.width.px]="320" [style.height.px]="320">
+                        <img [src]="getProfileImageUrl()" 
+                             [alt]="personalInfo.nom + ' ' + personalInfo.prenon" 
+                             class="img-fluid rounded-circle h-100 w-100" 
+                             style="object-fit: cover; border: 4px solid white;">
+                    </div>
+                    <div class="position-absolute bottom-0 end-0 bg-white p-3 rounded-circle shadow-sm" 
+                         style="border: 2px solid var(--primary-color);">
+                        <i class="fas fa-check-circle text-success fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 px-lg-5">
+                <h1 class="hero-title display-3 fw-bold mb-2">{{ personalInfo.nom }} {{ personalInfo.prenon }}</h1>
+                <h2 class="h4 mb-4" style="color: var(--primary-color); letter-spacing: 1px;">
+                    {{ personalInfo.profection }}
+                </h2>
+                <div class="lead mb-5 text-muted" style="font-size: 1.1rem; line-height: 1.8; white-space: pre-line;">
+                    {{ personalInfo.description }}
+                </div>
+                <a *ngIf="getCvUrl()" [href]="getCvUrl()" 
+                   class="btn btn-modern btn-modern-primary" target="_blank">
+                    <i class="fas fa-file-pdf me-2"></i>Consulter mon CV
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-5">
+            <div class="col-md-5 fade-up" style="animation-delay: 0.2s;">
+                <div class="glass-card h-100 shadow-sm p-4">
+                    <h3 class="h4 fw-bold mb-4" style="color: var(--primary-color);">
+                        <i class="fas fa-user-circle me-2"></i>Informations
+                    </h3>
+                    <div class="info-list">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="p-2 bg-white rounded shadow-sm me-3">
+                                <i class="fas fa-birthday-cake text-primary"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Naissance</small>
+                                <strong>{{ formatBirthday(personalInfo.birthday) }}</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="p-2 bg-white rounded shadow-sm me-3">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Localisation</small>
+                                <strong>{{ personalInfo.city }}</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="p-2 bg-white rounded shadow-sm me-3">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">E-mail</small>
+                                <strong>{{ personalInfo.email }}</strong>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="p-2 bg-white rounded shadow-sm me-3">
+                                <i class="fas fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Téléphone</small>
+                                <strong>{{ personalInfo.phone }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-7 fade-up" style="animation-delay: 0.4s;">
+                <div class="glass-card h-100 shadow-sm p-4">
+                    <h3 class="h4 fw-bold mb-4" style="color: var(--primary-color);">
+                        <i class="fas fa-brain me-2"></i>Compétences Clés
+                    </h3>
+                    <div class="row g-3">
+                        <ng-container *ngIf="skills.length > 0; else noSkills">
+                            <div *ngFor="let skill of skills" class="col-6">
+                                <div class="p-3 bg-white rounded shadow-sm d-flex align-items-center h-100 hover-lift">
+                                    <i [class]="getSkillIcon(skill) + ' me-3 fa-lg'" 
+                                       style="color: var(--primary-color);"></i>
+                                    <span class="fw-bold small">{{ skill.nom }}</span>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4 text-center">
+                                <a [routerLink]="['/skills']" 
+                                   class="btn btn-modern btn-modern-outline py-2 border-0">
+                                    Voir toutes les compétences <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </ng-container>
+                        <ng-template #noSkills>
+                            <p class="text-muted italic">Aucune compétence listée.</p>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #noInfo>
+        <div class="glass-card text-center py-5 fade-up">
+            <i class="fas fa-user-slash fa-3x mb-3 text-muted"></i>
+            <p class="mb-0">Aucune information personnelle n'a été ajoutée pour le moment.</p>
+        </div>
+    </ng-template>
+</div>

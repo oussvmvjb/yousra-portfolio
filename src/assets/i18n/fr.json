@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "journey": "Parcours",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "projects_btn": "Mes Projets",
+    "about_btn": "À propos de moi",
+    "code_design": "Code • Design • Innovation",
+    "typed": {
+      "developer": "Développeur Full Stack",
+      "designer": "Designer UI/UX",
+      "innovator": "Innovateur",
+      "problem_solver": "Résolveur de Problèmes"
+    }
+  },
+  "section_titles": {
+    "about": "À propos de moi",
+    "skills": "Compétences & Technologies",
+    "journey": "Mon Parcours",
+    "projects": "Mes Projets",
+    "contact": "Contactez-moi"
+  },
+  "about": {
+    "who_am_i": "Qui suis-je ?"
+  },
+  "journey": {
+    "education": "Formation",
+    "experience": "Expériences"
+  },
+  "contact": {
+    "title": "Parlons de votre projet",
+    "subtitle": "Vous avez un projet en tête ? N'hésitez pas à me contacter !",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "name": "Nom complet",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer"
+  }
+}

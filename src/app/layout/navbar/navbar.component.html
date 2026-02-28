@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold"
+       routerLink="/"
+       style="color: var(--primary-color);">
+      <i class="fas fa-terminal me-2"></i>Portfolio
+    </a>
+
+    <button class="navbar-toggler"
+            type="button"
+            (click)="toggleNavbar()"
+            [attr.aria-expanded]="!isNavbarCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse"
+         [class.show]="!isNavbarCollapsed">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">
+            {{ 'nav.home' | translate }}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">
+            {{ 'nav.about' | translate }}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/skills">
+            {{ 'nav.skills' | translate }}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/education">
+            {{ 'nav.journey' | translate }}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/projects">
+            {{ 'nav.projects' | translate }}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link btn btn-modern btn-modern-primary ms-lg-3 px-4 py-2"
+             routerLink="/contact">
+            {{ 'nav.contact' | translate }}
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
