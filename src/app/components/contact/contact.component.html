@@ -1,7 +1,7 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="text-center contact-title">Contactez-nous</h1>
+            <h1 class="text-center contact-title">{{ 'contact.contact_us' | translate }}</h1>
 
             <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ successMessage }}
@@ -17,58 +17,58 @@
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Nom complet</label>
+                            <label class="form-label">{{ 'contact.name' | translate }}</label>
                             <input type="text" class="form-control" formControlName="fullname"
                                 [class.is-invalid]="submitted && f['fullname'].errors">
                             <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                                Le nom est requis
+                                {{ 'contact.error_name' | translate }}
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Email</label>
+                            <label class="form-label">{{ 'contact.email' | translate }}</label>
                             <input type="email" class="form-control" formControlName="email"
                                 [class.is-invalid]="submitted && f['email'].errors">
                             <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                                <span *ngIf="f['email'].errors?.['required']">Email requis</span>
-                                <span *ngIf="f['email'].errors?.['email']">Email invalide</span>
+                                <span *ngIf="f['email'].errors?.['required']">{{ 'contact.error_email_required' | translate }}</span>
+                                <span *ngIf="f['email'].errors?.['email']">{{ 'contact.error_email_invalid' | translate }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Téléphone</label>
+                            <label class="form-label">{{ 'contact.phone' | translate }}</label>
                             <input type="tel" class="form-control" formControlName="phone"
                                 [class.is-invalid]="submitted && f['phone'].errors">
                             <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
-                                Téléphone requis
+                                {{ 'contact.error_phone' | translate }}
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Sujet</label>
+                            <label class="form-label">{{ 'contact.subject' | translate }}</label>
                             <input type="text" class="form-control" formControlName="subject"
                                 [class.is-invalid]="submitted && f['subject'].errors">
                             <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
-                                Sujet requis
+                                {{ 'contact.error_subject' | translate }}
                             </div>
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label class="form-label">Message</label>
+                        <label class="form-label">{{ 'contact.message' | translate }}</label>
                         <textarea class="form-control" rows="4" formControlName="message"
                             [class.is-invalid]="submitted && f['message'].errors"></textarea>
                         <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
-                            <span *ngIf="f['message'].errors?.['required']">Message requis</span>
+                            <span *ngIf="f['message'].errors?.['required']">{{ 'contact.error_message_required' | translate }}</span>
                             <span *ngIf="f['message'].errors?.['minlength']">
-                                Minimum 10 caractères
+                                {{ 'contact.error_message_min' | translate }}
                             </span>
                         </div>
                     </div>
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-contact" [disabled]="isSubmitting">
-                            <span *ngIf="!isSubmitting">Envoyer le message</span>
+                            <span *ngIf="!isSubmitting">{{ 'contact.send' | translate }}</span>
                             <span *ngIf="isSubmitting">
-                                <i class="fas fa-spinner fa-spin me-2"></i>Envoi...
+                                <i class="fas fa-spinner fa-spin me-2"></i>{{ 'contact.sending' | translate }}
                             </span>
                         </button>
                     </div>

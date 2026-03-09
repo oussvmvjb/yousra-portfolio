@@ -119,7 +119,7 @@ export class DataService {
     },
     {
       id: 14,
-      diplome: 'Bachelor’s Degree in Computer technology',
+      diplome: 'Bachelor"s Degree in Computer technology',
       etablissement: 'Higher Institute of Technological Studies (ISET), Médenine',
       datedebut: '2023-09-07',
       datefin: '2026-07-04',
@@ -155,7 +155,7 @@ export class DataService {
       datedebut: '2024-01-01',
       datefin: '2024-02-01',
       descriotion: 'Projet : Conception et développement d\'une application mobile de réservation de transport.\r\n​Missions :\r\n​Application de la méthodologie de design en 7 étapes (de l\'analyse des besoins au prototypage).\r\n​Conception de l\'interface utilisateur (UI/UX Design) pour une expérience fluide.\r\n​Développement du Front-end mobile en utilisant le framework Flutter.\r\n​Mise en place et configuration de la base de données et de l\'authentification via Firebase.\r\n​Intégration des fonctionnalités de réservation en temps réel.',
-      responsabilite: 'Développement de l’interface utilisateur et des interactions en utilisant le langage Dart dans Flutter.\r\n\r\nMise en place de l’authentification Firebase (email/mot de passe).\r\n\r\nIntégration de Firebase Firestore pour la gestion des données en temps réel.\r\n',
+      responsabilite: 'Développement de l"interface utilisateur et des interactions en utilisant le langage Dart dans Flutter.\r\n\r\nMise en place de l"authentification Firebase (email/mot de passe).\r\n\r\nIntégration de Firebase Firestore pour la gestion des données en temps réel.\r\n',
       locale: 'fr'
     },
     {
@@ -220,7 +220,7 @@ export class DataService {
       local: 'Médenine',
       datedebut: '2025-10-18',
       datefin: '2025-12-20',
-      descriotion: 'Projet : Plateforme Éducative Intelligente (Adaptive Learning)\r\n​Concept : Création d\'une plateforme d\'apprentissage personnalisée générant des cours et des quiz dynamiques basés sur le profil de l\'utilisateur.\r\n​Missions et Expertises :\r\n​Intelligence Artificielle : Fine-tuning et déploiement local du modèle Open-source Qwen pour la génération de contenu pédagogique spécifique.\r\n​Optimisation IA : Entraînement local avec focus sur la précision des réponses et la performance du modèle.\r\n​Développement Backend : Architecture robuste avec Django pour la gestion des utilisateurs, des données et l\'intégration de l\'IA via des APIs.\r\n​Développement Frontend : Interface interactive et réactive développée avec React.js.\r\n​Collaboration Agile : Travail d’équipe en mode Agile pour assurer l\'intégration Full-stack d\'une solution IA complexe.',
+      descriotion: 'Projet : Plateforme Éducative Intelligente (Adaptive Learning)\r\n​Concept : Création d\'une plateforme d\'apprentissage personnalisée générant des cours et des quiz dynamiques basés sur le profil de l\'utilisateur.\r\n​Missions et Expertises :\r\n​Intelligence Artificielle : Fine-tuning et déploiement local du modèle Open-source Qwen pour la génération de contenu pédagogique spécifique.\r\n​Optimisation IA : Entraînement local avec focus sur la précision des réponses et la performance du modèle.\r\n​Développement Backend : Architecture robuste avec Django pour la gestion des utilisateurs, des données et l\'intégration de l\'IA via des APIs.\r\n​Développement Frontend : Interface interactive et réactive développée avec React.js.\r\n​Collaboration Agile : Travail d"équipe en mode Agile pour assurer l\'intégration Full-stack d\'une solution IA complexe.',
       responsabilite: '',
       locale: 'fr'
     },
@@ -249,45 +249,98 @@ export class DataService {
   ];
 
   projects = [
+    // Télépharmacie - FR
     {
       id: 4,
-      titre: 'Télépharmacie',
-      description: 'Télépharmacie est une application web conçue pour faciliter l’accès aux médicaments à distance. Elle permet aux utilisateurs de consulter les produits disponibles, de passer des commandes, et aux pharmaciens de gérer les stocks et les ordonnances.',
-      technologie: 'HTML, CSS, JavaScript (ou un framework si applicable), Firebase / MySQL',
+      titre: "Télépharmacie",
+      description: `Télépharmacie est une application web conçue pour faciliter l"accès aux médicaments à distance. Elle permet aux utilisateurs de consulter les produits disponibles, de passer des commandes, et aux pharmaciens de gérer les stocks et les ordonnances.`,
+      technologie: "HTML, CSS, JavaScript, Firebase / MySQL",
       githublink: null,
-      image: 'Screenshot-2025-05-06-120706-6823e0189efc6.png',
-      locale: 'it',
-      creatdat: '2026-02-13 12:13:00',
+      image: "Screenshot-2025-05-06-120706-6823e0189efc6.png",
+      locale: "fr",
+      creatdat: "2026-02-13 12:13:00",
       images: [
-        'Screenshot-2026-02-24-085713-699d880505741.png',
-        'Screenshot-2026-02-24-085713-699d8806dafaa.png'
+        "Screenshot-2026-02-24-085713-699d880505741.png",
+        "Screenshot-2026-02-24-085713-699d8806dafaa.png"
       ]
     },
+    // Télépharmacie - EN
+    {
+      id: 41,
+      titre: "Telepharmacy",
+      description: `Telepharmacy is a web application designed to facilitate remote access to medications. It allows users to browse available products, place orders, and pharmacists to manage inventory and prescriptions.`,
+      technologie: "HTML, CSS, JavaScript, Firebase / MySQL",
+      githublink: null,
+      image: "Screenshot-2025-05-06-120706-6823e0189efc6.png",
+      locale: "en",
+      creatdat: "2026-02-13 12:13:00",
+      images: [
+        "Screenshot-2026-02-24-085713-699d880505741.png",
+        "Screenshot-2026-02-24-085713-699d8806dafaa.png"
+      ]
+    },
+    // Télépharmacie - IT
+    {
+      id: 42,
+      titre: "Telefarmacia",
+      description: `Telefarmacia è un"applicazione web progettata per facilitare l"accesso ai farmaci a distanza. Consente agli utenti di consultare i prodotti disponibili, effettuare ordini, e ai farmacisti di gestire le scorte e le prescrizioni.`,
+      technologie: "HTML, CSS, JavaScript, Firebase / MySQL",
+      githublink: null,
+      image: "Screenshot-2025-05-06-120706-6823e0189efc6.png",
+      locale: "it",
+      creatdat: "2026-02-13 12:13:00",
+      images: [
+        "Screenshot-2026-02-24-085713-699d880505741.png",
+        "Screenshot-2026-02-24-085713-699d8806dafaa.png"
+      ]
+    },
+    // Portfolio - FR
     {
       id: 5,
-      titre: 'Portfolio',
-      description: 'Ce projet de portfolio a été conçu pour présenter de manière professionnelle mes réalisations, compétences et parcours dans le domaine du développement web et mobile. Il constitue à la fois une vitrine de mon travail et un support évolutif pour mes futurs projets.\r\nPrésentation claire de mes projets avec descriptions, technologies et rôles\r\n\r\nSection “À propos” avec mon parcours éducatif et professionnel\r\n\r\nInterface responsive adaptée aux écrans mobiles et desktop\r\n\r\nCode propre, structuré et facilement maintenable',
-      technologie: 'php, symfony , Mysql, html',
+      titre: "Portfolio",
+      description: `Ce projet de portfolio a été conçu pour présenter de manière professionnelle mes réalisations, compétences et parcours dans le domaine du développement web et mobile.\nPrésentation claire de mes projets avec descriptions, technologies et rôles.\nSection “À propos” avec mon parcours éducatif et professionnel.\nInterface responsive adaptée aux écrans mobiles et desktop.\nCode propre, structuré et facilement maintenable.`,
+      technologie: "PHP, Symfony, MySQL, HTML",
       githublink: null,
-      image: 'WhatsApp-Image-2025-05-06-at-23-21-58-adb28b27-6823e160ef57b.jpg',
-      locale: 'it',
-      creatdat: '2026-02-12 12:14:00',
+      image: "WhatsApp-Image-2025-05-06-at-23-21-58-adb28b27-6823e160ef57b.jpg",
+      locale: "fr",
+      creatdat: "2026-02-12 12:14:00",
       images: [
-        'Screenshot-2026-02-24-084259-removebg-preview-699d88309214a.png',
-        'Screenshot-2026-02-24-084814-removebg-preview-699d883096d1a.png',
-        'Screenshot-2026-02-24-084251-removebg-preview-699d883098ecb.png'
+        "Screenshot-2026-02-24-084259-removebg-preview-699d88309214a.png",
+        "Screenshot-2026-02-24-084814-removebg-preview-699d883096d1a.png",
+        "Screenshot-2026-02-24-084251-removebg-preview-699d883098ecb.png"
       ]
     },
+    // Portfolio - EN
     {
-      id: 6,
-      titre: 'ConfiDrive',
-      description: 'jhghfdfsddddddddbb',
-      technologie: 'Frontend: Flutter ,Backend: Firebase,Database: Cloud Firestore,Maps Integration: Google Maps API',
+      id: 51,
+      titre: "Portfolio",
+      description: `This portfolio project was designed to professionally showcase my achievements, skills, and background in web and mobile development.\nClear presentation of my projects with descriptions, technologies, and roles.\n”About” section with my educational and professional background.\nResponsive interface adapted to mobile and desktop screens.\nClean, structured, and easily maintainable code.`,
+      technologie: "PHP, Symfony, MySQL, HTML",
       githublink: null,
-      image: '601354656-122118848631051271-2067813770214882627-n-699cab2903bb0.jpg',
-      locale: 'fr en it',
-      creatdat: '2026-02-23 20:31:00',
-      images: []
+      image: "WhatsApp-Image-2025-05-06-at-23-21-58-adb28b27-6823e160ef57b.jpg",
+      locale: "en",
+      creatdat: "2026-02-12 12:14:00",
+      images: [
+        "Screenshot-2026-02-24-084259-removebg-preview-699d88309214a.png",
+        "Screenshot-2026-02-24-084814-removebg-preview-699d883096d1a.png",
+        "Screenshot-2026-02-24-084251-removebg-preview-699d883098ecb.png"
+      ]
+    },
+    // Portfolio - IT
+    {
+      id: 52,
+      titre: "Portfolio",
+      description: `Questo progetto di portfolio è stato progettato per presentare in modo professionale le mie realizzazioni, competenze e percorso nel campo dello sviluppo web e mobile.\nPresentazione chiara dei miei progetti con descrizioni, tecnologie e ruoli.\nSezione “Chi sono” con il mio percorso formativo e professionale.\nInterfaccia responsive adattata a schermi mobili e desktop.\nCodice pulito, strutturato e facilmente manutenibile.`,
+      technologie: "PHP, Symfony, MySQL, HTML",
+      githublink: null,
+      image: "WhatsApp-Image-2025-05-06-at-23-21-58-adb28b27-6823e160ef57b.jpg",
+      locale: "it",
+      creatdat: "2026-02-12 12:14:00",
+      images: [
+        "Screenshot-2026-02-24-084259-removebg-preview-699d88309214a.png",
+        "Screenshot-2026-02-24-084814-removebg-preview-699d883096d1a.png",
+        "Screenshot-2026-02-24-084251-removebg-preview-699d883098ecb.png"
+      ]
     },
     {
       id: 7,
@@ -295,7 +348,7 @@ export class DataService {
       description: 'A full-stack web application designed to centralize academic news, exam results, retake schedules, and announcements within a university environment.\r\nCore Functionalities\r\nRole-based login (Student / Professor / Admin)\r\nView news sorted by date\r\nSearch by keyword\r\nFilter by category (Exams, Events, Results, Retake Sessions)\r\nAdd to favorites\r\nReal-time notifications\r\nAdmin content management & scheduled publication',
       technologie: 'React.js • Spring Boot • MySQL • REST API',
       githublink: null,
-      image: null,
+      image: 'abstract/project-api.svg',
       locale: 'en',
       creatdat: '2026-02-24 15:01:00',
       images: []
@@ -303,10 +356,10 @@ export class DataService {
     {
       id: 8,
       titre: 'Application de Gestion des Actualités Universitaires',
-      description: 'Une application web full-stack conçue pour centraliser les actualités académiques, les résultats d’examens, les sessions de rattrapage et les annonces au sein d’un environnement universitaire.\r\nFonctionnalités principales\r\nConnexion basée sur les rôles (Étudiant / Professeur / Administrateur)\r\nConsultation des actualités triées par date\r\nRecherche par mot-clé\r\nFiltrage par catégorie (Examens, Événements, Résultats, Sessions de rattrapage)\r\nAjout aux favoris\r\nNotifications en temps réel\r\nGestion du contenu par l’administrateur et planification de publication',
+      description: 'Une application web full-stack conçue pour centraliser les actualités académiques, les résultats d"examens, les sessions de rattrapage et les annonces au sein d"un environnement universitaire.\r\nFonctionnalités principales\r\nConnexion basée sur les rôles (Étudiant / Professeur / Administrateur)\r\nConsultation des actualités triées par date\r\nRecherche par mot-clé\r\nFiltrage par catégorie (Examens, Événements, Résultats, Sessions de rattrapage)\r\nAjout aux favoris\r\nNotifications en temps réel\r\nGestion du contenu par l"administrateur et planification de publication',
       technologie: 'React.js • Spring Boot • MySQL • API REST',
       githublink: null,
-      image: null,
+      image: 'abstract/project-api.svg',
       locale: 'fr',
       creatdat: '2026-02-24 15:06:00',
       images: []
@@ -314,10 +367,10 @@ export class DataService {
     {
       id: 9,
       titre: 'Applicazione di Gestione delle Notizie Universitarie',
-      description: 'Un’applicazione web full-stack progettata per centralizzare le notizie accademiche, i risultati degli esami, le sessioni di recupero e gli annunci all’interno di un ambiente universitario.\r\n-->Funzionalità principali\r\nAccesso basato sui ruoli (Studente / Professore / Amministratore)\r\nVisualizzazione delle notizie ordinate per data\r\nRicerca per parola chiave\r\nFiltro per categoria (Esami, Eventi, Risultati, Sessioni di recupero)\r\nAggiunta ai preferiti\r\nNotifiche in tempo reale\r\nGestione dei contenuti da parte dell’amministratore e pubblicazione programmata',
+      description: 'Un"applicazione web full-stack progettata per centralizzare le notizie accademiche, i risultati degli esami, le sessioni di recupero e gli annunci all"interno di un ambiente universitario.\r\n-->Funzionalità principali\r\nAccesso basato sui ruoli (Studente / Professore / Amministratore)\r\nVisualizzazione delle notizie ordinate per data\r\nRicerca per parola chiave\r\nFiltro per categoria (Esami, Eventi, Risultati, Sessioni di recupero)\r\nAggiunta ai preferiti\r\nNotifiche in tempo reale\r\nGestione dei contenuti da parte dell"amministratore e pubblicazione programmata',
       technologie: 'React.js • Spring Boot • MySQL • API REST',
       githublink: null,
-      image: null,
+      image: 'abstract/project-api.svg',
       locale: 'it',
       creatdat: '2026-02-24 15:11:00',
       images: []
@@ -328,7 +381,7 @@ export class DataService {
       description: 'CondiDrive is a role-based mobile application that connects drivers and clients through a centralized transport booking platform. It allows users to publish transport offers or requests and reserve services based on location and vehicle type.\r\n\r\nCore Functionalities\r\n\r\nRole-based authentication (Driver / Client)\r\n\r\nPublication system (post transport offers or requests)\r\n\r\nAdvanced search with geolocation\r\n\r\nFiltering by governorate and vehicle type\r\n\r\nSmart reservation form with automatic driver data retrieval\r\n\r\nBooking history management\r\n\r\nDynamic profile interface',
       technologie: 'Flutter • Firebase Authentication • Cloud Firestore • Google Maps API',
       githublink: null,
-      image: null,
+      image: 'abstract/project-mobile.svg',
       locale: 'en',
       creatdat: '2026-02-24 15:14:00',
       images: []
@@ -336,10 +389,10 @@ export class DataService {
     {
       id: 11,
       titre: 'CondiDrive – Application Mobile de Réservation de Transport',
-      description: 'CondiDrive est une application mobile basée sur un système de rôles qui connecte les chauffeurs et les clients via une plateforme centralisée de réservation de transport. Elle permet aux utilisateurs de publier des offres ou des demandes de transport et de réserver des services en fonction de la localisation et du type de véhicule.\r\nFonctionnalités principales\r\n\r\nAuthentification basée sur les rôles (Chauffeur / Client)\r\n\r\nSystème de publication (offres ou demandes de transport)\r\n\r\nRecherche avancée avec géolocalisation\r\n\r\nFiltrage par gouvernorat et type de véhicule\r\n\r\nFormulaire de réservation intelligent avec récupération automatique des données du chauffeur\r\n\r\n*Gestion de l’historique des réservations\r\n\r\nInterface de profil dynamique selon le rôle',
+      description: 'CondiDrive est une application mobile basée sur un système de rôles qui connecte les chauffeurs et les clients via une plateforme centralisée de réservation de transport. Elle permet aux utilisateurs de publier des offres ou des demandes de transport et de réserver des services en fonction de la localisation et du type de véhicule.\r\nFonctionnalités principales\r\n\r\nAuthentification basée sur les rôles (Chauffeur / Client)\r\n\r\nSystème de publication (offres ou demandes de transport)\r\n\r\nRecherche avancée avec géolocalisation\r\n\r\nFiltrage par gouvernorat et type de véhicule\r\n\r\nFormulaire de réservation intelligent avec récupération automatique des données du chauffeur\r\n\r\n*Gestion de l"historique des réservations\r\n\r\nInterface de profil dynamique selon le rôle',
       technologie: 'Flutter • Firebase Authentication • Cloud Firestore • Google Maps API',
       githublink: null,
-      image: null,
+      image: 'abstract/project-mobile.svg',
       locale: 'fr',
       creatdat: '2026-02-24 15:16:00',
       images: []
@@ -347,10 +400,10 @@ export class DataService {
     {
       id: 12,
       titre: 'CondiDrive – Applicazione Mobile per la Prenotazione di Trasporti',
-      description: 'CondiDrive è un’applicazione mobile basata su un sistema di ruoli che collega autisti e clienti attraverso una piattaforma centralizzata di prenotazione dei trasporti.\r\nL’applicazione consente agli utenti di pubblicare offerte o richieste di trasporto e di prenotare servizi in base alla posizione geografica e al tipo di veicolo.\r\nFunzionalità principali\r\n\r\nAutenticazione basata sui ruoli (Autista / Cliente)\r\n\r\nSistema di pubblicazione di offerte e richieste di trasporto\r\n\r\nRicerca avanzata con geolocalizzazione\r\n\r\nFiltro per governatorato e categoria di veicolo\r\n\r\nModulo di prenotazione intelligente con recupero automatico dei dati dell’autista\r\n\r\nGestione dello storico delle prenotazioni\r\n\r\nInterfaccia profilo dinamica in base al ruolo dell’utente',
+      description: 'CondiDrive è un"applicazione mobile basata su un sistema di ruoli che collega autisti e clienti attraverso una piattaforma centralizzata di prenotazione dei trasporti.\r\nL"applicazione consente agli utenti di pubblicare offerte o richieste di trasporto e di prenotare servizi in base alla posizione geografica e al tipo di veicolo.\r\nFunzionalità principali\r\n\r\nAutenticazione basata sui ruoli (Autista / Cliente)\r\n\r\nSistema di pubblicazione di offerte e richieste di trasporto\r\n\r\nRicerca avanzata con geolocalizzazione\r\n\r\nFiltro per governatorato e categoria di veicolo\r\n\r\nModulo di prenotazione intelligente con recupero automatico dei dati dell"autista\r\n\r\nGestione dello storico delle prenotazioni\r\n\r\nInterfaccia profilo dinamica in base al ruolo dell"utente',
       technologie: 'Flutter • Firebase Authentication • Cloud Firestore • Google Maps API',
       githublink: null,
-      image: null,
+      image: 'abstract/project-mobile.svg',
       locale: 'it',
       creatdat: '2026-02-24 15:18:00',
       images: []
@@ -538,7 +591,7 @@ export class DataService {
 
   getProjectsByLocale(locale: string) {
     return this.projects.filter(project =>
-      project.locale && project.locale.includes(locale)
+      project.locale === locale
     );
   }
 

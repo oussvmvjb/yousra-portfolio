@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,10 @@ export class ContactComponent {
   successMessage = '';
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private translate: TranslateService
+  ) {
     this.contactForm = this.fb.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -38,7 +42,9 @@ export class ContactComponent {
 
     // Simulate API call - replace with actual service
     setTimeout(() => {
-      this.successMessage = 'Message envoyé avec succès!';
+      this.translate.get('contact.success').subscribe(msg => {
+        this.successMessage = msg;
+      });
       this.contactForm.reset();
       this.submitted = false;
       this.isSubmitting = false;

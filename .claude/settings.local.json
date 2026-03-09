@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /media/lenpad/data/backup/SEAGATE/backup_entire/job/portfolios_n_CVs_for_foreign_students/students/07-Yosra_Ben_Rajab/project/yousra-portfolio/src/assets/i18n/*.json)"
+    ]
+  }
+}

@@ -119,8 +119,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private loadPersonalInfo(personalInfos: PersonalInfo[]) {
     this.personalInfo =
-      personalInfos.find((info: PersonalInfo) => info.cvpath !== null)!
-      ?? this.dataService.personalInfo.find(info => info.cvpath !== null)!
+      personalInfos[0]
       ?? this.dataService.personalInfo[0];
   }
 
@@ -184,6 +183,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   getProjectImageUrl(project: any): string {
-    return project.imageUrl || 'assets/default-project.png';
+    return project.image ? `assets/uploads/projects/${project.image}` : 'assets/uploads/projects/abstract/project-web.svg';
   }
 }

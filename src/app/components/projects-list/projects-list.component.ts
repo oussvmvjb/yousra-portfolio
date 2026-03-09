@@ -34,7 +34,7 @@ export class ProjectsListComponent implements OnInit {
   getProjectImage(project: Project): string {
     return project.image ?
       `assets/uploads/projects/${project.image}` :
-      'assets/images/default-project.jpg';
+      'assets/uploads/projects/abstract/project-web.svg';
   }
 
   formatYear(dateString: string): string {

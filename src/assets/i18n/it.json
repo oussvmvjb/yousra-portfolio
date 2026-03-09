@@ -1,6 +1,6 @@
 {
     "nav": {
-        "home": "Home",
+        "home": "Inizio",
         "about": "Chi sono",
         "skills": "Competenze",
         "journey": "Percorso",
@@ -11,6 +11,8 @@
         "projects_btn": "I Miei Progetti",
         "about_btn": "Su di Me",
         "code_design": "Codice • Design • Innovazione",
+        "developer_fallback": "Sviluppatore",
+        "tech_stack": "Symfony • PHP • Javascript",
         "typed": {
             "developer": "Sviluppatore Full Stack",
             "designer": "Designer UI/UX",
@@ -26,11 +28,13 @@
         "contact": "Contattami"
     },
     "about": {
-        "who_am_i": "Chi sono?"
+        "who_am_i": "Chi sono?",
+        "degree_fallback": "Laurea Magistrale"
     },
     "journey": {
         "education": "Formazione",
-        "experience": "Esperienza"
+        "experience": "Esperienza",
+        "present": "In corso"
     },
     "contact": {
         "title": "Parliamo del tuo progetto",
@@ -41,6 +45,34 @@
         "name": "Nome Completo",
         "subject": "Oggetto",
         "message": "Messaggio",
-        "send": "Invia"
+        "send": "Invia il messaggio",
+        "sending": "Invio...",
+        "success": "Messaggio inviato con successo!",
+        "error_name": "Il nome è obbligatorio",
+        "error_email_required": "Email obbligatoria",
+        "error_email_invalid": "Email non valida",
+        "error_phone": "Telefono obbligatorio",
+        "error_subject": "Oggetto obbligatorio",
+        "error_message_required": "Messaggio obbligatorio",
+        "error_message_min": "Minimo 10 caratteri",
+        "contact_us": "Contattaci"
+    },
+    "projects": {
+        "title": "I Miei Progetti",
+        "subtitle": "Scopri una selezione dei miei lavori recenti",
+        "no_projects": "Nessun progetto disponibile al momento."
+    },
+    "project": {
+        "about_this_project": "Informazioni sul Progetto",
+        "gallery": "Galleria",
+        "more_info": "Maggiori Informazioni",
+        "published_on": "Pubblicato il",
+        "language": "Lingua",
+        "back_to_projects": "Torna ai Progetti",
+        "details_btn": "Vedi Dettagli"
+    },
+    "footer": {
+        "portfolio": "Il Mio Portfolio",
+        "rights": "Tutti i diritti riservati."
     }
 }

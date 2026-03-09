@@ -11,6 +11,8 @@
     "projects_btn": "Mes Projets",
     "about_btn": "À propos de moi",
     "code_design": "Code • Design • Innovation",
+    "developer_fallback": "Développeur",
+    "tech_stack": "Symfony • PHP • Javascript",
     "typed": {
       "developer": "Développeur Full Stack",
       "designer": "Designer UI/UX",
@@ -26,11 +28,13 @@
     "contact": "Contactez-moi"
   },
   "about": {
-    "who_am_i": "Qui suis-je ?"
+    "who_am_i": "Qui suis-je ?",
+    "degree_fallback": "Bac+5"
   },
   "journey": {
     "education": "Formation",
-    "experience": "Expériences"
+    "experience": "Expériences",
+    "present": "Présent"
   },
   "contact": {
     "title": "Parlons de votre projet",
@@ -41,6 +45,34 @@
     "name": "Nom complet",
     "subject": "Sujet",
     "message": "Message",
-    "send": "Envoyer"
+    "send": "Envoyer le message",
+    "sending": "Envoi...",
+    "success": "Message envoyé avec succès !",
+    "error_name": "Le nom est requis",
+    "error_email_required": "Email requis",
+    "error_email_invalid": "Email invalide",
+    "error_phone": "Téléphone requis",
+    "error_subject": "Sujet requis",
+    "error_message_required": "Message requis",
+    "error_message_min": "Minimum 10 caractères",
+    "contact_us": "Contactez-nous"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "subtitle": "Découvrez une sélection de mes réalisations récentes",
+    "no_projects": "Aucun projet disponible pour le moment."
+  },
+  "project": {
+    "about_this_project": "À propos de ce projet",
+    "gallery": "Galerie",
+    "more_info": "Plus d'informations",
+    "published_on": "Publié le",
+    "language": "Langue",
+    "back_to_projects": "Retour aux projets",
+    "details_btn": "Voir détails"
+  },
+  "footer": {
+    "portfolio": "Mon Portfolio",
+    "rights": "Tous droits réservés."
   }
 }
